@@ -1,0 +1,60 @@
+<!-- try-again-page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try Again</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #ffdbdb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #try-again-container {
+      padding: 20px;
+      border: 2px solid #f44336;
+      border-radius: 10px;
+      background-color: #ffcccc;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #f44336;
+    }
+
+    #try-again-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #f44336;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="try-again-container">
+    <h2>Sorry, it didn't work out this time.</h2>
+    <button id="try-again-button" onclick="tryAgain()">Try Again</button>
+  </div>
+
+  <script>
+    function tryAgain() {
+      // Redirect to the main proposal page
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

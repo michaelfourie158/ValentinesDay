@@ -1,0 +1,87 @@
+<!-- crying-emoji-page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorry</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #ffdbdb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #sad-page-container {
+      padding: 20px;
+      border: 2px solid #f44336;
+      border-radius: 10px;
+      background-color: #ffcccc;
+      max-width: 800px; /* Adjust the max-width as needed */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #f44336;
+    }
+
+    #sad-emoji {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    #try-again-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    #additional-pictures {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    #additional-pictures img {
+      max-width: 200px;
+      max-height: 200px;
+      border-radius: 5px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sad-page-container">
+    <div id="sad-emoji">&#128557;</div>
+    <h2>Dit was die verkeerde antwoord iwetiekie :(</h2>
+    <button id="try-again-button" onclick="tryAgain()">Try Again</button>
+
+    <!-- Additional Pictures -->
+    <div id="additional-pictures">
+      <img src="sad1.jpg" alt="Additional Image 1">
+      <img src="sad2.jpg" alt="Additional Image 2">
+      <img src="sad3.jpg" alt="Additional Image 3">
+      <img src="sad4.jpg" alt="Additional Image 4">
+    </div>
+  </div>
+
+  <script>
+    function tryAgain() {
+      // Redirect to the main proposal page
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

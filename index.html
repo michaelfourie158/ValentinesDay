@@ -1,0 +1,267 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Proposal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <style>
+    body {
+      font-family: 'Crimson Text', cursive;
+      text-align: center;
+      background-color: #ffdbdb;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #proposal {
+      position: relative;
+      margin-top: 50px;
+      padding: 20px;
+      border: 2px solid #ffc0c0;
+      border-radius: 10px;
+      background-color: #fff;
+      max-width: 800px; /* Adjust the max-width as needed */
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #ff4d4d;
+    }
+
+    #image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .image-container {
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .button-container button, #no-button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #yes-button {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    #no-button {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .heart-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(-30vh) rotate(45deg);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+      }
+    }
+
+    #message-page {
+      display: none;
+    }
+
+    #message {
+      margin-top: 50px;
+      padding: 20px;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      background-color: #eaffeb;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #message h2 {
+      color: #4CAF50;
+    }
+
+    /* Random text styling */
+    .random-text {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      color: #ff4d4d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hearts Container -->
+  <div class="heart-container"></div>
+
+  <div id="proposal">
+    <h1>Will you be my Valentine?</h1>
+
+    <div id="image-grid">
+      <div class="image-container">
+        <img src="image1.jpg" alt="Image 1">
+      </div>
+      <div class="image-container">
+        <img src="image2.jpg" alt="Image 2">
+      </div>
+      <!-- Add more image containers as needed -->
+    </div>
+
+    <div class="button-container">
+      <button id="yes-button" onclick="showMessage()">Yes</button>
+      <a href="crying-emoji-page.html" id="no-button">No</a>
+    </div>
+
+    <!-- Random Texts -->
+    <div class="random-text" id="random-text1"></div>
+    <div class="random-text" id="random-text2"></div>
+    <div class="random-text" id="random-text3"></div>
+  </div>
+
+  <div id="message-page">
+  <div id="message">
+    <h2>You are now officially Michael's Valentine. I love you!</h2>
+
+    <!-- Additional Pictures -->
+    <div id="additional-pictures">
+      <img src="success1.jpg" alt="Success Image 1" class="success-image">
+      <img src="success2.jpg" alt="Success Image 2" class="success-image">
+    </div>
+  </div>
+</div>
+
+<!-- ... (remaining code) ... -->
+
+<style>
+  /* Add this style to control the size of success images */
+  .success-image {
+    max-width: 80%; /* Set the maximum width to 100% of the container */
+    height: auto;    /* Allow the height to adjust proportionally */
+    border-radius: 5px;
+    margin: 10px;
+  }
+</style>
+
+  <script>
+    function showMessage() {
+      document.getElementById('proposal').style.display = 'none';
+      document.getElementById('message-page').style.display = 'block';
+    }
+
+    // Generate random hearts
+    document.addEventListener('DOMContentLoaded', function() {
+      const heartsContainer = document.querySelector('.heart-container');
+      const numHearts = 80; // Adjust the number of hearts
+      for (let i = 0; i < numHearts; i++) {
+        createHeart();
+      }
+
+      function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️'; // Use heart emoji
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+        heartsContainer.appendChild(heart);
+      }
+
+      // Random Texts
+       const randomTexts = [
+        "You make my heart skip a beat!",
+        "Forever yours",
+        "Love you more than words can say",
+        "You light up my life",
+        "You are my sunshine",
+        "Every moment with you is special",
+        "You complete me",
+        "My love for you is endless",
+        "You're the missing piece to my puzzle",
+        "You are the melody in my heart",
+		"Baie lief vir jou",
+		"Amper 2 jaar!",
+		"My iwetiekiekie",
+		"Jys cute",
+		"Bleh bleh bleh", 
+	    "Jys pragtig btw",
+		"Wow Im lucky to have you",
+		"Myne vir altyd",
+		"<3",
+		"Hierdie het lank gevat",
+		"My bokkie ;)",
+		"Be my valentine?!",
+		"pls love me",
+		"ur pretty",
+		"29/03/2022"
+      ];
+
+      setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * randomTexts.length);
+        const randomText = randomTexts[randomIndex];
+        displayRandomText(randomText);
+      }, 3000);
+
+      function displayRandomText(text) {
+        const randomTextElements = document.querySelectorAll('.random-text');
+        const randomTextElement = randomTextElements[Math.floor(Math.random() * randomTextElements.length)];
+        randomTextElement.innerText = text;
+        randomTextElement.style.display = 'block';
+
+        setTimeout(() => {
+          randomTextElement.style.display = 'none';
+        }, 2900);
+      }
+    });
+  </script>
+
+</body>
+</html>
